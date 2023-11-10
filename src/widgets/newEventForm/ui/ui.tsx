@@ -10,7 +10,6 @@ import { FC, useState } from 'react';
 
 export const NewEventForm: FC = () => {
   const [isActiveInfo, setIsActiveInfo] = useState<boolean>(true);
-  console.log(isActiveInfo);
   // const [eventData, setEventData] = useState<EventData> ({})
 
   return (
