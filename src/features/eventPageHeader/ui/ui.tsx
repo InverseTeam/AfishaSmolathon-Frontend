@@ -15,7 +15,7 @@ export const EventPageHeader = ({
   pageTitle,
 }: {
   setActive: (arg: boolean) => void;
-  leftBtnTitle: string;
+  leftBtnTitle?: string;
   rightBtnTitle: string;
   pageTitle: string;
 }) => {
@@ -27,24 +27,38 @@ export const EventPageHeader = ({
       <Gapped vertical gap="16px">
         <PageTitle>{pageTitle}</PageTitle>
         <Gapped>
-          <button
-            className={`${styles.tabBtn} ${btnPublishedActive ? styles.active : ''}`}
-            onClick={() => {
-              setBtnPublishedActive(true);
-              setBtnModeratorActive(false);
-              setActive(true);
-            }}>
-            {leftBtnTitle}
-          </button>
-          <button
-            className={`${styles.tabBtn} ${btnModeratorActive ? styles.active : ''}`}
-            onClick={() => {
-              setBtnModeratorActive(true);
-              setBtnPublishedActive(false);
-              setActive(false);
-            }}>
-            {rightBtnTitle}
-          </button>
+          {leftBtnTitle && (
+            <button
+              className={`${styles.tabBtn} ${btnPublishedActive ? styles.active : ''}`}
+              onClick={() => {
+                setBtnPublishedActive(true);
+                setBtnModeratorActive(false);
+                setActive(true);
+              }}>
+              {leftBtnTitle}
+            </button>
+          )}
+          {!leftBtnTitle ? (
+            <button
+              className={`${styles.tabBtn} ${styles.active} `}
+              onClick={() => {
+                setBtnModeratorActive(true);
+                setBtnPublishedActive(false);
+                setActive(false);
+              }}>
+              {rightBtnTitle}
+            </button>
+          ) : (
+            <button
+              className={`${styles.tabBtn} ${btnModeratorActive ? styles.active : ''}`}
+              onClick={() => {
+                setBtnModeratorActive(true);
+                setBtnPublishedActive(false);
+                setActive(false);
+              }}>
+              {rightBtnTitle}
+            </button>
+          )}
           <IconButton
             onClick={() => router.push('/admin/event/newevent')}
             width="48px"
