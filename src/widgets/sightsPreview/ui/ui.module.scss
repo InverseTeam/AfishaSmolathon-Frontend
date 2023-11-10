@@ -1,0 +1,42 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  align-items: center;
+  justify-content: center;
+
+  .title {
+    color: #222;
+    font-family: Mont;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+  .address {
+    color: #7b7b7b;
+    font-family: Mont;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+  }
+  .cover {
+    width: 512px;
+    height: 420px;
+    position: relative;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 16px;
+  }
+  .description {
+    color: #7b7b7b;
+    font-family: Mont;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+  }
+}
