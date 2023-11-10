@@ -36,3 +36,14 @@ export interface Images {
   id: number;
   image: string;
 }
+
+export interface Sights {
+  id: string;
+  name: string;
+  description: string;
+  address: string;
+  musculoskeletal_disorders: string;
+  visual_impairment: string;
+  intellectual_impairment: string;
+  cover: string;
+}
