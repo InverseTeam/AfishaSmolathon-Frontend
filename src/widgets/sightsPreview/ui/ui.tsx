@@ -1,9 +1,9 @@
-import { Sights } from '@/shared/interfaces/event';
 import styles from './ui.module.scss';
 import { useState, useEffect } from 'react';
 import { Get } from '../model';
 import { Button, ThemeContext, ThemeFactory } from '@skbkontur/react-ui';
 import { useRouter } from 'next/navigation';
+import { Sights } from '@/shared/interfaces/event';
 
 export const SightPreview = ({ id }: { id: number }) => {
   const [data, setData] = useState<Sights | null>(null);
